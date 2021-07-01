@@ -1,0 +1,18 @@
+<view class="my_title">
+  <!-- logo -->
+  <view class="logo">
+    <image class="logo_img" src="../../icons/bilibili-blue.png" style="width:140rpx;height:60rpx"></image>
+  </view>
+  <!-- search -->
+  <view class="search-img">
+    <image src="../../icons/bilibili-search.png" style="width:60rpx;height:60rpx"></image>
+  </view>
+  <!-- user -->
+  <view class="user-img">
+    <image src="../../icons/bilibili.png" style="width:60rpx;height:60rpx"></image>
+  </view>
+  <!-- download -->
+  <view class="download-img">
+    下载APP
+  </view>
+</view>

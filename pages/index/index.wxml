@@ -1,0 +1,56 @@
+<view class="main">
+  <!--头部组件-->
+  <MyTitle></MyTitle>
+  <!-- 首页导航栏 -->
+  <view class="nav_wrap">
+    <!-- 滚动区的组件 -->
+    <scroll-view class="nav" scroll-x="x">
+      <view bindtap="activeNav" data-index="{{index}}" class="nav_item  {{index===currentIndexNav?'active':''}}" wx:for="{{navList}}" wx:key="index">
+        {{item.text}}
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="slides">
+    <swiper autoplay="aotuplay" indicator-dots circular interval="2000">
+      <swiper-item wx:for="{{swiperList}}" wx:key="index">
+        <navigator url="../details/details?id={{item.id}}" >
+          <image mode="widthFix" src="{{item.imgSrc}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 视频列表 -->
+  <view class="video_wrap">
+    <navigator url="../details/details?id={{item.id}}" class="video_item" wx:for="{{videoList}}" wx:key="index">
+      <!-- 视频 -->
+      <view class="video_img">
+        <!-- 图片 -->
+        <image mode="widthFix" src="{{item.imgSrc}}"></image>
+        <!-- 播放量 -->
+        <view class="video_info">
+          <!-- 观看量 -->
+          <view class="paly_count_wrap">
+            <!-- 图标 -->
+            <image src="../../icons/bilibili-view.png"></image>
+            <!-- 数值 -->
+            <text class="play_count">{{item.playCount}}</text>
+          </view>
+          <!-- 评论量 -->
+          <view class="comment_count_wrap">
+            <!-- 图标 -->
+            <image src="../../icons/bilibili-comment.png"></image>
+            <!-- 数值 -->
+            <text class="comment_count">{{item.commentCount}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 标题 -->
+      <view class="video_title">
+        {{item.desc}}
+      </view>
+    </navigator>
+  </view>
+
+</view>
